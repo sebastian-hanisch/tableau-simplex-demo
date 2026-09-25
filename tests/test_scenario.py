@@ -86,3 +86,9 @@ def reference_status(inst):
     if h.status == 0:
         return "optimal"
     return "infeasible" if _highs(inst, zero_objective=True).status == 2 else "unbounded"
+
+
+def test_mixed_equations_with_the_same_support_stay_feasible():
+    """Regression: gerundete Gleichungs-Bedingungen mit gleichem Träger (etwa zwei Zeilen nur in x3) machten 9 von 9000 Mischinstanzen unzulässig."""
+    for seed, m, n, d in ((1, 6, 4, 0.3), (23, 6, 4, 0.3), (31, 6, 4, 0.5), (76, 6, 4, 0.5), (110, 6, 4, 0.3), (133, 10, 8, 0.3), (142, 10, 8, 0.3), (163, 6, 4, 0.3), (168, 6, 4, 0.3)):
+        assert _highs(S.generate("mixed", m, n, d, seed)).status == 0, (seed, m, n, d)

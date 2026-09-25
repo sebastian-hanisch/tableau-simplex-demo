@@ -103,7 +103,10 @@ def generate(kind, m, n, density, seed):
         for i in range(m):
             act = sum(A[i][j] * x0[j] for j in range(n))
             slack = rng.uniform(0.5, 25.0)
-            b.append(round(act + slack if senses[i] == LE else (act - slack if senses[i] == GE else act), 2))
+            if senses[i] == EQ:
+                b.append(act)                                                                    # nicht runden: sonst können Gleichungen mit gleichem Träger unvereinbar werden
+                continue
+            b.append(round(act + slack if senses[i] == LE else act - slack, 2))
             if senses[i] == GE and b[-1] < 0:
                 b[-1] = 0.0
         return _inst(A, b, c, senses, names, row_names, kind)
