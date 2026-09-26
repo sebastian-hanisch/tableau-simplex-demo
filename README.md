@@ -4,7 +4,7 @@
 
 Erstes Stück (Wurzel) der **Lineare-Programmierung-Reihe** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning". Ein Distributionszentrum plant seine Auslastung: welche Dienste (Express-Pakete, Palettenversand, ...) in welcher Menge, damit der Deckungsbeitrag maximal wird und keine knappe Ressource (Rampenzeit, Kommissionierstunden, Lagerfläche) überschritten wird. Das ist ein **Lineares Programm**. Der **Simplex-Algorithmus** löst es mit einem dichten **Tableau**, indem er von Ecke zu Ecke der Zulässigkeitsmenge läuft: jede Ecke ist eine Basis, jeder **Pivot** tauscht eine Variable in ihr aus. Die Demo stellt vier Fragen, alle gemessen: **(1) Geometrie** – wo läuft der Simplex entlang (bei zwei Diensten gezeichnet)? **(2) Tableau** – was passiert bei einem Pivot? **(3) Zwei Phasen** – was, wenn der Ursprung nicht zulässig ist? **(4) Aufwand** – wie viele Pivots braucht er, und was kostet jeder?
 
-**Einordnung in die Reihe:** geplant sind zwölf Stücke, dies ist die Wurzel (Details in der Scoping-Notiz `lp-planung/PLAN.md` des Portfolio-Ordners):
+**Einordnung in die Reihe:** die Reihe hat elf Stücke, dies ist die Wurzel (Details in der Scoping-Notiz `lp-planung/PLAN.md` des Portfolio-Ordners):
 
 ```
 Tableau-Simplex (Wurzel: Ecken, Basis, Pivot, Zwei-Phasen-Start)                         [DIESES STÜCK]
