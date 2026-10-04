@@ -68,7 +68,7 @@ Ursprung nicht zulässig ist? **(4) Aufwand** - wie viele Pivots braucht er, und
 """
 )
 st.caption(
-    "Wurzel der Reihe. Die Verfahren der Folgestücke (Pivotregeln, Revised Simplex, Dualität, Innere Punkte, PDLP) sind [noch nicht gebaut]. Den Netzwerksimplex, eine Spezialform mit Spannbaum als Basis, zeigt "
+    "Wurzel der Reihe. Die Verfahren der Folgestücke (Pivotregeln, Revised Simplex, Dualität, Innere Punkte, PDLP) sind inzwischen als eigene Demos gebaut. Den Netzwerksimplex, eine Spezialform mit Spannbaum als Basis, zeigt "
     "[network-flow-demo](https://github.com/sebastian-hanisch/network-flow-demo)."
 )
 
@@ -309,6 +309,6 @@ Implementiert in `tsx_algorithm.py` (Standardform, Zwei-Phasen-Simplex, Prüfgr�
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Lineare Programmierung: vom Tableau zum Crossover](https://sebastianhanisch.net/konzepte-lineare-programmierung.html)."
 )

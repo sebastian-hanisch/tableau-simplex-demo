@@ -8,11 +8,11 @@ Erstes Stück (Wurzel) der **Lineare-Programmierung-Reihe** der "Konzepte"-Reihe
 
 ```
 Tableau-Simplex (Wurzel: Ecken, Basis, Pivot, Zwei-Phasen-Start)                         [DIESES STÜCK]
- ├─ Pivotregeln & Entartung  ─ Simplex im schlimmsten und im typischen Fall (Klee-Minty)  [nicht gebaut]
- ├─ Revised Simplex ─ Präsolve, Skalierung & Numerik                                     [nicht gebaut]
- ├─ Dualität & Sensitivität ─ Dualer Simplex & Neuoptimierung                            [nicht gebaut]
- ├─ Ellipsoid-Methode (Kontrast: polynomial in der Theorie)                              [nicht gebaut]
- └─ Innere Punkte ─ PDLP (Verfahren erster Ordnung) ─ Crossover & Simplex gegen Innere Punkte gegen PDLP  [nicht gebaut]
+ ├─ Pivotregeln & Entartung  ─ Simplex im schlimmsten und im typischen Fall (Klee-Minty)  [gebaut]
+ ├─ Revised Simplex ─ Präsolve, Skalierung & Numerik                                     [gebaut]
+ ├─ Dualität & Sensitivität ─ Dualer Simplex & Neuoptimierung                            [gebaut]
+ ├─ Ellipsoid-Methode (Kontrast: polynomial in der Theorie)                              [gebaut]
+ └─ Innere Punkte ─ PDLP (Verfahren erster Ordnung) ─ Crossover & Simplex gegen Innere Punkte gegen PDLP  [gebaut]
 ```
 
 Ergebnis in Kürze: **Der Simplex braucht auf diesen Instanzen wenige Pivots – aber wie viele, hängt davon ab, ob der Ursprung zulässig ist.** Auf zufälligen Instanzen mit lauter ≤-Bedingungen sind es im Median **3/5.5/10.5/20/32.5** Pivots bei m = n = 5/10/20/40/60, also nur 0.5 bis 0.6 je Ressource (meine Vorab-Hypothese "1 bis 3 je Ressource" ist dort **widerlegt**). Mit Mindest- und Gleichungsbedingungen sind es **5/13/38/105.5/199**, 1.0 bis 3.3 je Ressource und je Größe mehr, und **25 bis 39 %** der Pivots gehören zur Phase 1. Gleichstände im Quotiententest treten bei Ressourcen, die Summen anderer sind, in bis zu **36 %** der Pivots auf, ein Nullschritt (Stillstand) aber nie. Ein Pivot im dichten Tableau kostet (Spalten + 1) · (1 + 2 m) Rechenoperationen, bei m = n = 60 sind das **14 641**: die Schwäche, die der Revised Simplex behebt.
@@ -90,4 +90,4 @@ Tests: `pip install -r requirements-dev.txt` und `python -m pytest tests/ -W err
 - Dantzig, G. B. (1951). *Maximization of a linear function of variables subject to linear inequalities.* In T. C. Koopmans (Hrsg.), Activity Analysis of Production and Allocation, 339–347. Wiley.
 - Klee, V., & Minty, G. J. (1972). *How good is the simplex algorithm?* In O. Shisha (Hrsg.), Inequalities III, 159–175. Academic Press (nur als Ausblick, Folgestück).
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning.
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Lineare Programmierung: vom Tableau zum Crossover](https://sebastianhanisch.net/konzepte-lineare-programmierung.html).
