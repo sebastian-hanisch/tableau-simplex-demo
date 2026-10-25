@@ -67,6 +67,19 @@ Ressource (Rampenzeit, Kommissionierstunden, Lagerfläche) überschritten wird. 
 Ursprung nicht zulässig ist? **(4) Aufwand** - wie viele Pivots braucht er, und was kostet jeder?
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/lp-simplex-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Stellen Sie sich ein Distributionszentrum vor, das mehrere Dienste anbietet. Jeder Dienst bringt Gewinn, braucht aber knappe Mittel wie Rampenzeit, Kommissionierstunden und Lagerfläche. Gesucht ist die Mischung, die den Gewinn maximiert, ohne einen Vorrat zu überschreiten. Das ist ein **Lineares Programm**. Zeichnet man bei zwei Diensten alle erlaubten Mengen ein, ergibt sich eine Fläche mit Ecken: der **zulässige Bereich**.
+
+Weil der Gewinn gleichmäßig mit den Mengen wächst, liegt der beste Punkt in einer Ecke dieser Fläche. Der **Simplex-Algorithmus** startet in einer Ecke, geht zu einer Nachbarecke mit mehr Gewinn und hört auf, wenn keine Nachbarecke besser ist. Jeder dieser Schritte heißt **Pivot**. Die Demo zeigt den Weg in der Zeichnung und die Rechentabelle (das **Tableau**), die dabei bei jedem Pivot neu entsteht.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/lp-simplex-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Wurzel der Reihe. Die Verfahren der Folgestücke (Pivotregeln, Revised Simplex, Dualität, Innere Punkte, PDLP) sind inzwischen als eigene Demos gebaut. Den Netzwerksimplex, eine Spezialform mit Spannbaum als Basis, zeigt "
     "[network-flow-demo](https://github.com/sebastian-hanisch/network-flow-demo)."
@@ -285,6 +298,27 @@ st.markdown(
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/lp-simplex-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind der Gewinn je Einheit $c$ der Dienste, der Verbrauch $A$ der knappen Ressourcen je Einheit und die Vorräte $b$. Gesucht sind die Mengen $x$ der Dienste, die den Gewinn $c^\top x$ maximieren, ohne einen Vorrat zu überschreiten.
+
+| Symbol | Bedeutung |
+|---|---|
+| $x$, $c$ | Mengen der Dienste und Gewinn (Deckungsbeitrag) je Einheit |
+| $A$, $b$ | Verbrauch je Einheit und Vorrat der knappen Ressourcen |
+| $s$ | Schlupfvariable: ungenutzter Rest einer Ressource |
+| $B$ | Basis: ausgewählte Spalten, die die aktuelle Ecke festlegen |
+| $x_B$, $x_N$ | Werte der Variablen in der Basis bzw. außerhalb (diese sind null) |
+| $r_j$ | reduzierte Kosten der Spalte $j$: ist $r_j < 0$, erhöht der Eintritt dieser Spalte den Zielwert |
+| $t_{ij}$ | Eintrag des Tableaus in Zeile $i$ und Spalte $j$ |
+| $y$ | Schattenpreise der Ressourcen (Dualvariablen) |
+| $m$, $N$ | Zahl der Zeilen (Ressourcen) bzw. Spalten des Tableaus |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/lp-simplex-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Lineares Programm (Standardform mit Schlupf).** $\max\; c^\top x$ unter $A x + s = b,\; x, s \ge 0$. Eine **Basis** $B$ ($m$ linear unabhängige Spalten) liefert die **Basislösung** $x_B = B^{-1} b$, $x_N = 0$; sie ist zulässig, wenn $x_B \ge 0$, und

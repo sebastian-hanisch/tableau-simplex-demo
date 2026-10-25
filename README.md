@@ -24,7 +24,7 @@ Ergebnis in Kürze: **Der Simplex braucht auf diesen Instanzen wenige Pivots –
 | **Zufall mit lauter ≤** | Pivots bei m = n = 5/10/20/40/60: **3/5.5/10.5/20/32.5** (0.6/0.55/0.53/0.5/0.54 je Ressource); keine Phase 1, keine Gleichstände. Bei festem m = 20 wachsen sie langsamer als n (n = 5/20/60: 4/7/15), bei festem n = 20 langsamer als m (m = 5/20/60: 5/7/13) |
 | **Mischung mit ≥ und =** | Pivots bei m = n = 5/10/20/40/60: **5/13/38/105.5/199** (1.0/1.3/1.9/2.6/3.3 je Ressource, wächst also mit der Größe); **25 bis 39 %** der Pivots in Phase 1 (bei m = n = 60: 25 % von 199) |
 | **Entartung** | Bei Ressourcen, die Summen anderer Ressourcen sind: Gleichstände im Quotiententest in **16.7/36.4/15.8 %** der Pivots (m = n = 10/20/40), aber **kein einziger Nullschritt**. Nullschritte gibt es überhaupt nur in den Mischinstanzen und selten: 22 in gut 11 000 Pivots auf 720 Instanzen (240 je Typ), 19 davon in Phase 1 (Beispiel im Preset "Phase 1 in der Zeichnung": der erste Pivot ändert die Ecke nicht) |
-| **Notbremse** | Die Bland-Regel als Sicherheitsnetz gegen Zyklen (nach 2 · (m + Spalten) Nullschritten in Folge) wurde auf keiner der 360 geprüften erzeugten Instanzen gebraucht |
+| **Notbremse** | Die Bland-Regel als Sicherheitsnetz gegen Zyklen (nach 2 · (m + Spalten) Nullschritten in Folge) wurde auf keiner der 360 geprüften erzeugten Instanzen gebraucht (eigene Stichprobe, nicht die 720 der Nullschritt-Zählung: 40 Instanzen je Zufallstyp und Größe, Zufalls-Seeds 200000–200039, Größen m × n = 5 × 5, 20 × 20 und 40 × 30, Dichte 0.5) |
 | **Aufwand je Pivot** | (Spalten + 1) · (1 + 2 m) Rechenoperationen, exakt nachgezählt: 441 bei m = n = 10, 1681 bei 20, **14 641** bei 60; das Tableau rechnet bei jedem Pivot alle Einträge neu |
 
 ## Was die Demo zeigt
